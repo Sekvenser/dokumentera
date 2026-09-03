@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+web/data/
+web/dokument/
+web/sitemap.xml
