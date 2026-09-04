@@ -275,7 +275,7 @@ def render_entry_detail_html(entry, body_html):
         gallery_html = (f'<h3 class="pages-heading">Sidor ur utgåvan</h3>'
                          f'<div class="pages-gallery">{thumbs}</div>')
 
-    return f"""<a class="back" href="/#/">&larr; Tillbaka</a>
+    return f"""<a class="back" href="/#/">&larr; Alla dokument</a>
     <div class="detail-layout">
       <div class="detail">
         <div class="detail-head">

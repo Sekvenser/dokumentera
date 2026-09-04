@@ -60,3 +60,13 @@ Push till `main` kör `.github/workflows/pages.yml`: den installerar
 `requirements.txt`, kör `python3 cli.py build` och publicerar hela `web/`
 (byggartefakterna ovan ingår) via GitHub Pages. Kräver att repots
 Pages-källa är satt till "GitHub Actions" (Settings → Pages).
+
+Alla länkar och tillgångar i sajten är rotabsoluta (`/style.css`, `/app.js`,
+`/data/...`, `/dokument/...`, `/assets/...`) och förutsätter att sajten körs
+från domänens rot — precis som `SITE_URL` i `cli.py`, `robots.txt` och varje
+`<link rel="canonical">` redan pekar mot `dokumentera.sekvenser.se`.
+`web/CNAME` deklarerar den domänen åt GitHub Pages, men du måste även: peka
+en DNS-post för `dokumentera.sekvenser.se` mot GitHub Pages, och sätta samma
+domän under Settings → Pages → Custom domain. Utan det serveras sajten på
+`https://<org>.github.io/dokumentera/` istället — då 404:ar allt utom
+`index.html` självt, eftersom de rotabsoluta sökvägarna pekar fel.
